@@ -487,6 +487,24 @@ namespace Dotstrap.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Allow multiple Roblox windows.
+        /// </summary>
+        public static string Menu_Behaviour_MultiInstance_Title {
+            get {
+                return ResourceManager.GetString("Menu.Behaviour.MultiInstance.Title", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Lets you have more than one Roblox window open at once. [...]
+        /// </summary>
+        public static string Menu_Behaviour_MultiInstance_Description {
+            get {
+                return ResourceManager.GetString("Menu.Behaviour.MultiInstance.Description", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Analytics.
         /// </summary>
         public static string Common_Analytics {

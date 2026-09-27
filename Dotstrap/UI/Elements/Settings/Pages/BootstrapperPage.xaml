@@ -23,7 +23,13 @@
             <ui:ToggleSwitch IsChecked="{Binding ConfirmLaunches, Mode=TwoWay}" />
         </controls:OptionControl>
 
-        <controls:OptionControl 
+        <controls:OptionControl
+            Header="{x:Static resources:Strings.Menu_Behaviour_MultiInstance_Title}"
+            Description="{x:Static resources:Strings.Menu_Behaviour_MultiInstance_Description}">
+            <ui:ToggleSwitch IsChecked="{Binding MultiInstanceLaunching, Mode=TwoWay}" />
+        </controls:OptionControl>
+
+        <controls:OptionControl
             Header="{x:Static resources:Strings.Menu_Behaviour_BackgroundUpdates_Title}"
             Description="{x:Static resources:Strings.Menu_Behaviour_BackgroundUpdates_Description}">
             <ui:ToggleSwitch IsChecked="{Binding BackgroundUpdates, Mode=TwoWay}" />

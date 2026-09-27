@@ -67,6 +67,8 @@ namespace Dotstrap
 
         private AsyncMutex? _mutex;
 
+        private RobloxSingletonHolder? _robloxSingleton;
+
         private int _appPid = 0;
 
         public IBootstrapperDialog? Dialog = null;
@@ -304,12 +306,39 @@ namespace Dotstrap
                         Frontend.ShowBalloonTip(Strings.Bootstrapper_ModificationsFailed_Title, Strings.Bootstrapper_ModificationsFailed_Message, ToolTipIcon.Warning);
                 }
 
+                // must be owned before the client starts, otherwise it takes the mutex itself
+                if (_launchMode == LaunchMode.Player && App.Settings.Prop.MultiInstanceLaunching)
+                    _robloxSingleton = RobloxSingletonHolder.TryAcquire();
+
                 StartRoblox();
             }
 
             await mutex.ReleaseAsync();
 
             Dialog?.CloseBootstrapper();
+
+            if (_robloxSingleton is not null)
+                await HoldRobloxSingleton();
+        }
+
+        /// <summary>
+        /// Keeps this process running in the background (with no window) while any Roblox client is open,
+        /// since the singleton mutex is released - and multi-instance stops working - as soon as we exit.
+        /// Later launches see the mutex is already held by us and don't need to hold it themselves.
+        /// </summary>
+        private async Task HoldRobloxSingleton()
+        {
+            const string LOG_IDENT = "Bootstrapper::HoldRobloxSingleton";
+
+            App.Logger.WriteLine(LOG_IDENT, "Holding Roblox singleton mutex until all Roblox clients have closed");
+
+            while (RobloxSingletonHolder.IsRobloxPlayerRunning())
+                await Task.Delay(TimeSpan.FromSeconds(3));
+
+            App.Logger.WriteLine(LOG_IDENT, "All Roblox clients have closed, releasing singleton mutex");
+
+            _robloxSingleton?.Dispose();
+            _robloxSingleton = null;
         }
 
         private RegistryKey GetChannelRegistryKey() => Registry.CurrentUser.CreateSubKey($"SOFTWARE\\ROBLOX Corporation\\Environments\\{AppData.RegistryName}\\Channel");

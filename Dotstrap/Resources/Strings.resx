@@ -1568,4 +1568,10 @@ The installation process will be quick and simple, and you will be able to confi
   <data name="Menu.Dotstrap.ViewLogs.OpenFolder" xml:space="preserve">
     <value>Open folder</value>
   </data>
+  <data name="Menu.Behaviour.MultiInstance.Title" xml:space="preserve">
+    <value>Allow multiple Roblox windows</value>
+  </data>
+  <data name="Menu.Behaviour.MultiInstance.Description" xml:space="preserve">
+    <value>Lets you have more than one Roblox window open at once. This is not officially supported by Roblox, so use it at your own risk. After turning this on, close all Roblox windows before your next launch. Dotstrap keeps running in the background while Roblox is open.</value>
+  </data>
 </root>

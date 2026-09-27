@@ -1587,4 +1587,10 @@ Dotstrap был установлен в "{1}".</value>
   <data name="Menu.Dotstrap.ViewLogs.OpenFolder" xml:space="preserve">
     <value>Открыть папку</value>
   </data>
+  <data name="Menu.Behaviour.MultiInstance.Title" xml:space="preserve">
+    <value>Несколько окон Roblox</value>
+  </data>
+  <data name="Menu.Behaviour.MultiInstance.Description" xml:space="preserve">
+    <value>Позволяет открывать несколько копий Roblox одновременно. Roblox официально это не поддерживает — используйте на свой риск. После включения закройте все окна Roblox перед первым запуском. Пока Roblox открыт, Dotstrap работает в фоне.</value>
+  </data>
 </root>
