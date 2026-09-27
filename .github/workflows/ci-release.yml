@@ -54,7 +54,7 @@ jobs:
           # release was made by hand - swap in the CI build
           gh release upload $env:TAG $exe --clobber
         } else {
-          gh release create $env:TAG $exe --title $env:TAG --generate-notes
+          gh release create $env:TAG $exe --title "Dotstrap $env:TAG" --generate-notes
         }
 
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
