@@ -865,6 +865,15 @@ namespace Dotstrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A new version of Dotstrap is out: {0} (you have {1}). [...]
+        /// </summary>
+        public static string Dialog_UpdateAvailable {
+            get {
+                return ResourceManager.GetString("Dialog.UpdateAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Analytics.
         /// </summary>
         public static string Common_Analytics {

@@ -1719,4 +1719,9 @@ Dotstrap был установлен в "{1}".</value>
   <data name="Enums.FramerateCap.Unlimited" xml:space="preserve">
     <value>Без ограничения</value>
   </data>
+  <data name="Dialog.UpdateAvailable" xml:space="preserve">
+    <value>Вышла новая версия Dotstrap: {0} (у вас {1}).
+
+Хотите обновить её сейчас?</value>
+  </data>
 </root>

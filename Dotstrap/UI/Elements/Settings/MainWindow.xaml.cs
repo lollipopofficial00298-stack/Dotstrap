@@ -35,6 +35,9 @@ namespace Dotstrap.UI.Elements.Settings
                 ShowAlreadyRunningSnackbar();
 
             LoadState();
+
+            // after updating, the new version opens the settings again
+            Loaded += (_, _) => AppUpdater.PromptForUpdate("-settings");
         }
 
         public void LoadState()

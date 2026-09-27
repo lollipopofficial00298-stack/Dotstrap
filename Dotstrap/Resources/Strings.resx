@@ -1700,4 +1700,9 @@ The installation process will be quick and simple, and you will be able to confi
   <data name="Enums.FramerateCap.Unlimited" xml:space="preserve">
     <value>Unlimited</value>
   </data>
+  <data name="Dialog.UpdateAvailable" xml:space="preserve">
+    <value>A new version of Dotstrap is out: {0} (you have {1}).
+
+Would you like to update now?</value>
+  </data>
 </root>

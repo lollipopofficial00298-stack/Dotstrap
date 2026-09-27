@@ -36,6 +36,9 @@ namespace Dotstrap.UI.Elements.Dialogs
             DataContext = viewModel;
 
             InitializeComponent();
+
+            // after updating, the new version opens this menu again
+            Loaded += (_, _) => AppUpdater.PromptForUpdate();
         }
     }
 }
