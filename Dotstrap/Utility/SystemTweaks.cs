@@ -21,8 +21,8 @@ namespace Dotstrap.Utility
             FramerateCap.Fps300 => 300,
             FramerateCap.Fps360 => 360,
             FramerateCap.Fps480 => 480,
-            FramerateCap.Fps1000 => 1000,
-            FramerateCap.Unlimited => -1, // what Roblox Studio stores for no cap
+            // roblox rejects -1 (what studio stores for no cap) and drops to 60 fps, so the old unlimited option gets 1000 instead
+            FramerateCap.Fps1000 or FramerateCap.Unlimited => 1000,
             _ => null
         };
 

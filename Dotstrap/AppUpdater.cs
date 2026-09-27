@@ -21,7 +21,12 @@ namespace Dotstrap
                 return null;
 
             // the update overwrites the installed exe, which can't happen while another instance (e.g. the watcher) runs from it
-            if (Process.GetProcessesByName(App.ProjectName).Length > 1)
+            var instances = Process.GetProcessesByName(App.ProjectName);
+
+            foreach (var process in instances)
+                process.Dispose();
+
+            if (instances.Length > 1)
             {
                 App.Logger.WriteLine(LOG_IDENT, "More than one Dotstrap instance running, not offering an update");
                 return null;

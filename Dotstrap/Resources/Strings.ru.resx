@@ -1466,7 +1466,14 @@ Dotstrap был установлен в "{1}".</value>
     <value>Графический API</value>
   </data>
   <data name="Menu.FastFlags.Presets.GraphicsAPI.Description" xml:space="preserve">
-    <value>Принудительно включает у Roblox выбранный графический движок. Помогает при проблемах с графикой на некоторых видеокартах. Этот флаг входит в официальный разрешённый список Roblox.</value>
+    <value>Принудительно включает у Roblox выбранный графический движок. Помогает при проблемах с графикой на некоторых видеокартах. Этот флаг входит в официальный разрешённый список Roblox. С Vulkan Roblox может вылетать при сворачивании окна.</value>
+  </data>
+  <data name="Menu.FastFlags.Presets.GraphicsAPI.VulkanWarning" xml:space="preserve">
+    <value>С Vulkan Roblox может вылетать, когда вы сворачиваете окно или меняете его размер (особенно на видеокартах AMD).
+
+Если это случится, верните «Автоматически» или Direct3D 11.
+
+Всё равно включить Vulkan?</value>
   </data>
   <data name="Menu.FastFlags.Presets.FlatSky.Title" xml:space="preserve">
     <value>Плоское небо (производительность)</value>
@@ -1723,5 +1730,11 @@ Dotstrap был установлен в "{1}".</value>
     <value>Вышла новая версия Dotstrap: {0} (у вас {1}).
 
 Хотите обновить её сейчас?</value>
+  </data>
+  <data name="Watcher.RobloxCrashed" xml:space="preserve">
+    <value>Roblox вылетел. Это ошибка самого Roblox, обычно помогает просто перезапустить его.</value>
+  </data>
+  <data name="Watcher.RobloxCrashed.Vulkan" xml:space="preserve">
+    <value>Сейчас у Roblox включён Vulkan, из-за него он может вылетать (например, при сворачивании). Попробуйте сменить графический API на «Автоматически» или Direct3D 11 в настройках движка.</value>
   </data>
 </root>

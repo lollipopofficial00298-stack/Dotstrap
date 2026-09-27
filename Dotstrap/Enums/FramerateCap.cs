@@ -12,6 +12,7 @@ namespace Dotstrap.Enums
         Fps480,
         [EnumName(StaticName = "1000")]
         Fps1000,
+        // no longer offered - roblox treats -1 as invalid and falls back to 60 fps. kept so saved settings still load, and applied as 1000
         Unlimited
     }
 }

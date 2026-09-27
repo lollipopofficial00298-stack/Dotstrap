@@ -119,11 +119,11 @@ namespace Dotstrap.UI.ViewModels.Settings
 
         // everything below goes through windows / roblox's settings file rather than fast flags (see SystemTweaks)
 
-        public IReadOnlyCollection<FramerateCap> FramerateCaps { get; } = Enum.GetValues<FramerateCap>();
+        public IReadOnlyCollection<FramerateCap> FramerateCaps { get; } = Enum.GetValues<FramerateCap>().Where(x => x != FramerateCap.Unlimited).ToList();
 
         public FramerateCap SelectedFramerateCap
         {
-            get => App.Settings.Prop.FramerateCap;
+            get => App.Settings.Prop.FramerateCap == FramerateCap.Unlimited ? FramerateCap.Fps1000 : App.Settings.Prop.FramerateCap;
             set => App.Settings.Prop.FramerateCap = value;
         }
 

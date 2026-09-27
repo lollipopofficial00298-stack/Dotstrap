@@ -42,6 +42,19 @@ namespace Dotstrap.UI.ViewModels.Settings
             get => App.FastFlags.GetPresetEnum(GraphicsAPIs, "Rendering.API", "True");
             set
             {
+                // roblox's vulkan renderer crashes on some gpus (seen on amd) when the window is minimized or resized
+                if (value == GraphicsAPI.Vulkan && SelectedGraphicsAPI != GraphicsAPI.Vulkan)
+                {
+                    var result = Frontend.ShowMessageBox(Strings.Menu_FastFlags_Presets_GraphicsAPI_VulkanWarning, MessageBoxImage.Warning, MessageBoxButton.YesNo);
+
+                    if (result != MessageBoxResult.Yes)
+                    {
+                        // the combobox has already changed its text, so put it back once this binding update is done
+                        Application.Current.Dispatcher.BeginInvoke(() => OnPropertyChanged(nameof(SelectedGraphicsAPI)));
+                        return;
+                    }
+                }
+
                 if (value == GraphicsAPI.Default)
                     App.FastFlags.SetPreset("Rendering.API", null);
                 else

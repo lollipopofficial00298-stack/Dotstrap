@@ -50,14 +50,34 @@ namespace Dotstrap.Utility
             return null;
         }
 
+        /// <summary>
+        /// Whether any Roblox client is open. Roblox's tray mode keeps a windowless RobloxPlayerBeta running in the background
+        /// (and starts it with Windows), which isn't a client and would otherwise keep us waiting forever.
+        /// </summary>
         public static bool IsRobloxPlayerRunning()
         {
             var processes = Process.GetProcessesByName(App.RobloxPlayerAppName);
 
+            bool running = processes.Any(IsClientProcess);
+
             foreach (var process in processes)
                 process.Dispose();
 
-            return processes.Length > 0;
+            return running;
+        }
+
+        private static bool IsClientProcess(Process process)
+        {
+            try
+            {
+                // a minimized client still has its window, and a client that's only just started may not have one yet
+                return process.MainWindowHandle != IntPtr.Zero || DateTime.Now - process.StartTime < TimeSpan.FromSeconds(30);
+            }
+            catch
+            {
+                // exited, or no access - treat it like before and count it
+                return true;
+            }
         }
 
         private void HoldMutex()

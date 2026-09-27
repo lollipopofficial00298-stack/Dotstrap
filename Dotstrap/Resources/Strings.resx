@@ -829,7 +829,14 @@ Selecting 'No' will ignore this warning and continue installation.</value>
     <value>Preferred graphics API</value>
   </data>
   <data name="Menu.FastFlags.Presets.GraphicsAPI.Description" xml:space="preserve">
-    <value>Forces Roblox to use a specific rendering backend. Useful for troubleshooting graphics issues on some GPUs. This is on Roblox's official client FastFlag allowlist.</value>
+    <value>Forces Roblox to use a specific rendering backend. Useful for troubleshooting graphics issues on some GPUs. This is on Roblox's official client FastFlag allowlist. Vulkan can make Roblox crash when its window is minimized.</value>
+  </data>
+  <data name="Menu.FastFlags.Presets.GraphicsAPI.VulkanWarning" xml:space="preserve">
+    <value>With Vulkan, Roblox can crash when you minimize or resize its window (seen on AMD graphics cards in particular).
+
+If that happens, switch back to Automatic or Direct3D 11.
+
+Use Vulkan anyway?</value>
   </data>
   <data name="Menu.FastFlags.Presets.FlatSky.Title" xml:space="preserve">
     <value>Flat sky (performance)</value>
@@ -1704,5 +1711,11 @@ The installation process will be quick and simple, and you will be able to confi
     <value>A new version of Dotstrap is out: {0} (you have {1}).
 
 Would you like to update now?</value>
+  </data>
+  <data name="Watcher.RobloxCrashed" xml:space="preserve">
+    <value>Roblox crashed. This is a problem in Roblox itself, and restarting it usually helps.</value>
+  </data>
+  <data name="Watcher.RobloxCrashed.Vulkan" xml:space="preserve">
+    <value>Roblox is set to use Vulkan, which can make it crash (e.g. when minimizing). Try switching the graphics API to Automatic or Direct3D 11 in the Engine settings.</value>
   </data>
 </root>

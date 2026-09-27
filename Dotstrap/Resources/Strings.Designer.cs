@@ -3648,6 +3648,24 @@ namespace Dotstrap.Resources {
             }
         }
 
+        public static string Watcher_RobloxCrashed {
+            get {
+                return ResourceManager.GetString("Watcher.RobloxCrashed", resourceCulture);
+            }
+        }
+
+        public static string Watcher_RobloxCrashed_Vulkan {
+            get {
+                return ResourceManager.GetString("Watcher.RobloxCrashed.Vulkan", resourceCulture);
+            }
+        }
+
+        public static string Menu_FastFlags_Presets_GraphicsAPI_VulkanWarning {
+            get {
+                return ResourceManager.GetString("Menu.FastFlags.Presets.GraphicsAPI.VulkanWarning", resourceCulture);
+            }
+        }
+
         public static string Menu_FastFlags_Presets_FlatSky_Title {
             get {
                 return ResourceManager.GetString("Menu.FastFlags.Presets.FlatSky.Title", resourceCulture);

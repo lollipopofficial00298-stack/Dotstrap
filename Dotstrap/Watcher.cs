@@ -1,4 +1,6 @@
-﻿using Dotstrap.AppData;
+﻿using System.Windows;
+
+using Dotstrap.AppData;
 using Dotstrap.Integrations;
 using Dotstrap.Models;
 
@@ -22,6 +24,8 @@ namespace Dotstrap
         private string? _previousPowerPlan;
 
         private bool _integrationsDisposed = false;
+
+        private readonly DateTime _startTime = DateTime.Now;
 
         public Watcher()
         {
@@ -124,6 +128,8 @@ namespace Dotstrap
             while (Utilities.GetProcessesSafe().Any(x => x.Id == _watcherData.ProcessId))
                 await Task.Delay(1000);
 
+            await CheckForCrash();
+
             if (_watcherData.AutoclosePids is not null)
             {
                 foreach (int pid in _watcherData.AutoclosePids)
@@ -146,6 +152,49 @@ namespace Dotstrap
             }
 
             RestorePowerPlan();
+        }
+
+        /// <summary>
+        /// Lets the user know if Roblox crashed rather than being closed, going by the minidump Roblox's crash handler leaves behind.
+        /// </summary>
+        private async Task CheckForCrash()
+        {
+            const string LOG_IDENT = "Watcher::CheckForCrash";
+
+            string reportsFolder = Path.Combine(Paths.LocalAppData, "Roblox", "logs", "crashes", "reports");
+
+            // the crash handler can finish writing the dump a moment after the client is gone
+            for (int attempt = 0; attempt < 5; attempt++)
+            {
+                try
+                {
+                    // with multi-instance launching, only count dumps from around now, not another client that crashed earlier on
+                    DateTime since = DateTime.Now - TimeSpan.FromSeconds(30);
+
+                    bool crashed = Directory.Exists(reportsFolder) && new DirectoryInfo(reportsFolder).EnumerateFiles("*.dmp")
+                        .Any(x => x.LastWriteTime >= _startTime && x.LastWriteTime >= since);
+
+                    if (crashed)
+                    {
+                        App.Logger.WriteLine(LOG_IDENT, "Found a crash dump, Roblox crashed");
+
+                        string message = Strings.Watcher_RobloxCrashed;
+
+                        if (App.FastFlags.GetPreset("Rendering.API.Vulkan") == "True")
+                            message += "\n\n" + Strings.Watcher_RobloxCrashed_Vulkan;
+
+                        Frontend.ShowMessageBox(message, MessageBoxImage.Warning);
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    App.Logger.WriteException(LOG_IDENT, ex);
+                    return;
+                }
+
+                await Task.Delay(1000);
+            }
         }
 
         private void RestorePowerPlan()
