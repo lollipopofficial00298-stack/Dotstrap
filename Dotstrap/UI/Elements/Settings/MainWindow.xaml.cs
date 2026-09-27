@@ -16,9 +16,11 @@ namespace Dotstrap.UI.Elements.Settings
     {
         private Models.Persistable.WindowState _state => App.State.Prop.SettingsWindow;
 
+        private readonly MainWindowViewModel _viewModel;
+
         public MainWindow(bool showAlreadyRunningWarning)
         {
-            var viewModel = new MainWindowViewModel();
+            var viewModel = _viewModel = new MainWindowViewModel();
 
             viewModel.RequestSaveNoticeEvent += (_, _) => SettingsSavedSnackbar.Show();
             viewModel.RequestCloseWindowEvent += (_, _) => Close();
@@ -100,7 +102,7 @@ namespace Dotstrap.UI.Elements.Settings
 
         private void WpfUiWindow_Closed(object sender, EventArgs e)
         {
-            if (App.LaunchSettings.TestModeFlag.Active)
+            if (App.LaunchSettings.TestModeFlag.Active || _viewModel.LaunchRobloxOnClose)
                 LaunchHandler.LaunchRoblox(LaunchMode.Player);
             else
                 App.SoftTerminate();

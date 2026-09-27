@@ -27,13 +27,7 @@ namespace Dotstrap.UI.ViewModels.Settings
             set => App.Settings.Prop.UseFastFlagManager = value;
         }
 
-        public IReadOnlyDictionary<MSAAMode, string?> MSAALevels => FastFlagManager.MSAAModes;
-
-        public MSAAMode SelectedMSAALevel
-        {
-            get => MSAALevels.FirstOrDefault(x => x.Value == App.FastFlags.GetPreset("Rendering.MSAA")).Key;
-            set => App.FastFlags.SetPreset("Rendering.MSAA", MSAALevels[value]);
-        }
+        // texture quality, msaa, flat sky and grass motion presets live on the optimization page (OptimizationViewModel)
 
         public bool FixDisplayScaling
         {
@@ -41,24 +35,6 @@ namespace Dotstrap.UI.ViewModels.Settings
             set => App.FastFlags.SetPreset("Rendering.DisableScaling", value ? "True" : null);
         }
 
-        public IReadOnlyDictionary<TextureQuality, string?> TextureQualities => FastFlagManager.TextureQualityLevels;
-
-        public TextureQuality SelectedTextureQuality
-        {
-            get => TextureQualities.Where(x => x.Value == App.FastFlags.GetPreset("Rendering.TextureQuality.Level")).FirstOrDefault().Key;
-            set
-            {
-                if (value == TextureQuality.Default)
-                {
-                    App.FastFlags.SetPreset("Rendering.TextureQuality", null);
-                }
-                else
-                {
-                    App.FastFlags.SetPreset("Rendering.TextureQuality.OverrideEnabled", "True");
-                    App.FastFlags.SetPreset("Rendering.TextureQuality.Level", TextureQualities[value]);
-                }
-            }
-        }
         public IReadOnlyDictionary<GraphicsAPI, string> GraphicsAPIs => FastFlagManager.GraphicsAPITargets;
 
         public GraphicsAPI SelectedGraphicsAPI
@@ -71,18 +47,6 @@ namespace Dotstrap.UI.ViewModels.Settings
                 else
                     App.FastFlags.SetPresetEnum("Rendering.API", GraphicsAPIs[value], "True");
             }
-        }
-
-        public bool FlatSky
-        {
-            get => App.FastFlags.GetPreset("Rendering.FlatSky") == "True";
-            set => App.FastFlags.SetPreset("Rendering.FlatSky", value ? "True" : null);
-        }
-
-        public bool ReducedGrassMotion
-        {
-            get => App.FastFlags.GetPreset("Rendering.ReducedGrassMotion") == "100";
-            set => App.FastFlags.SetPreset("Rendering.ReducedGrassMotion", value ? "100" : null);
         }
 
         public bool ResetConfiguration

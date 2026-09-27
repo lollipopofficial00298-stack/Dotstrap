@@ -15,6 +15,11 @@ namespace Dotstrap.Models.Persistable
         public bool CheckForUpdates { get; set; } = true;
         public bool ConfirmLaunches { get; set; } = false;
         public bool MultiInstanceLaunching { get; set; } = false;
+
+        // optimization (windows / roblox settings file, see SystemTweaks)
+        public FramerateCap FramerateCap { get; set; } = FramerateCap.Default;
+        public bool PreferHighPerformanceGpu { get; set; } = false;
+        public bool HighPerformancePowerPlan { get; set; } = false;
         public string Locale { get; set; } = "nil";
         public bool UseFastFlagManager { get; set; } = true;
         public bool WPFSoftwareRender { get; set; } = false;

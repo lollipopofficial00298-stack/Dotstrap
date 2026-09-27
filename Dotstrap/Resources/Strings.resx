@@ -1574,4 +1574,130 @@ The installation process will be quick and simple, and you will be able to confi
   <data name="Menu.Behaviour.MultiInstance.Description" xml:space="preserve">
     <value>Lets you have more than one Roblox window open at once. This is not officially supported by Roblox, so use it at your own risk. After turning this on, close all Roblox windows before your next launch. Dotstrap keeps running in the background while Roblox is open.</value>
   </data>
+  <data name="Menu.Optimization.Title" xml:space="preserve">
+    <value>Optimization</value>
+  </data>
+  <data name="Menu.Optimization.Description" xml:space="preserve">
+    <value>Settings that lower the load Roblox puts on your computer. Only flags from Roblox&apos;s official allowlist are used. Changes apply the next time Roblox starts.</value>
+  </data>
+  <data name="Menu.Optimization.ManagerDisabled" xml:space="preserve">
+    <value>Fast Flag management is turned off on the Fast Flags page, so these settings won&apos;t be applied.</value>
+  </data>
+  <data name="Menu.Optimization.Profiles.Title" xml:space="preserve">
+    <value>Quick setup</value>
+  </data>
+  <data name="Menu.Optimization.Profiles.MaxPerformance" xml:space="preserve">
+    <value>Maximum performance</value>
+  </data>
+  <data name="Menu.Optimization.Profiles.MaxPerformance.Description" xml:space="preserve">
+    <value>Sets all graphics and world settings below to the lowest load. Games will look simpler.</value>
+  </data>
+  <data name="Menu.Optimization.Profiles.Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Menu.Optimization.Profiles.Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Menu.Optimization.Categories.Graphics" xml:space="preserve">
+    <value>Graphics</value>
+  </data>
+  <data name="Menu.Optimization.Categories.World" xml:space="preserve">
+    <value>World</value>
+  </data>
+  <data name="Menu.Optimization.QualityLevel.Title" xml:space="preserve">
+    <value>Graphics quality</value>
+  </data>
+  <data name="Menu.Optimization.QualityLevel.Description" xml:space="preserve">
+    <value>Locks Roblox&apos;s graphics quality level: 1 is the lowest, 21 the highest. Automatic uses the in-game setting.</value>
+  </data>
+  <data name="Menu.Optimization.PauseVoxelizer.Title" xml:space="preserve">
+    <value>Stop lighting updates</value>
+  </data>
+  <data name="Menu.Optimization.PauseVoxelizer.Description" xml:space="preserve">
+    <value>Stops lighting and shadows from being recalculated when the world changes. Lowers CPU load, but lighting may look wrong.</value>
+  </data>
+  <data name="Menu.Optimization.LowerDetail.Title" xml:space="preserve">
+    <value>Simplify distant objects</value>
+  </data>
+  <data name="Menu.Optimization.LowerDetail.Description" xml:space="preserve">
+    <value>Complex objects (unions) always use their simplest level of detail. Lowers GPU load.</value>
+  </data>
+  <data name="Menu.Optimization.DisableGrass.Title" xml:space="preserve">
+    <value>Remove grass</value>
+  </data>
+  <data name="Menu.Optimization.DisableGrass.Description" xml:space="preserve">
+    <value>Stops grass from being drawn on terrain.</value>
+  </data>
+  <data name="Menu.SaveAndLaunch" xml:space="preserve">
+    <value>Save and launch</value>
+  </data>
+  <data name="Menu.Optimization.Categories.System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Menu.Optimization.Categories.System.Description" xml:space="preserve">
+    <value>Windows settings that Dotstrap applies for Roblox. Roblox itself isn&apos;t touched.</value>
+  </data>
+  <data name="Menu.Optimization.Gpu.Title" xml:space="preserve">
+    <value>Use high performance GPU</value>
+  </data>
+  <data name="Menu.Optimization.Gpu.Description" xml:space="preserve">
+    <value>Tells Windows to run Roblox on the more powerful graphics card, same as the &quot;High performance&quot; option in Windows graphics settings. Mostly helps on laptops with two GPUs.</value>
+  </data>
+  <data name="Menu.Optimization.PowerPlan.Title" xml:space="preserve">
+    <value>High performance power plan while playing</value>
+  </data>
+  <data name="Menu.Optimization.PowerPlan.Description" xml:space="preserve">
+    <value>Switches Windows to the &quot;High performance&quot; power plan while Roblox is open, and back to your usual plan when it closes. Uses more battery on laptops.</value>
+  </data>
+  <data name="Menu.Optimization.Categories.Experimental" xml:space="preserve">
+    <value>Experimental</value>
+  </data>
+  <data name="Menu.Optimization.Categories.Experimental.Description" xml:space="preserve">
+    <value>Not an official Roblox option: it may be ignored or change in a future update. Use at your own risk.</value>
+  </data>
+  <data name="Menu.Optimization.FramerateCap.Title" xml:space="preserve">
+    <value>Maximum frame rate</value>
+  </data>
+  <data name="Menu.Optimization.FramerateCap.Description" xml:space="preserve">
+    <value>Writes this value into Roblox&apos;s own settings file before each launch, in place of the in-game &quot;Maximum Frame Rate&quot; option (which stops at 240). Roblox may still limit it. Don&apos;t change the frame rate in-game while this is on.</value>
+  </data>
+  <data name="Menu.Optimization.Categories.Maintenance" xml:space="preserve">
+    <value>Maintenance</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.Title" xml:space="preserve">
+    <value>Clear Roblox cache</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.Description" xml:space="preserve">
+    <value>Deletes Roblox&apos;s logs, temporary files and downloaded game assets to free up disk space. Assets are downloaded again when needed, so the first join into each game may take longer. Settings and your login are kept.</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.Button" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.Confirm" xml:space="preserve">
+    <value>Delete Roblox&apos;s logs, temporary files and cached game assets?</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.Done" xml:space="preserve">
+    <value>Done! Freed {0} MB.</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.RobloxRunning" xml:space="preserve">
+    <value>Close Roblox and Roblox Studio first, then try again.</value>
+  </data>
+  <data name="Menu.Optimization.Folders.Title" xml:space="preserve">
+    <value>Roblox folders</value>
+  </data>
+  <data name="Menu.Optimization.Folders.Description" xml:space="preserve">
+    <value>Quickly open the folder with your Roblox screenshots or Roblox&apos;s own logs.</value>
+  </data>
+  <data name="Menu.Optimization.Folders.Screenshots" xml:space="preserve">
+    <value>Screenshots</value>
+  </data>
+  <data name="Menu.Optimization.Folders.Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Enums.FramerateCap.Default" xml:space="preserve">
+    <value>Don&apos;t change (in-game setting)</value>
+  </data>
+  <data name="Enums.FramerateCap.Unlimited" xml:space="preserve">
+    <value>Unlimited</value>
+  </data>
 </root>

@@ -306,9 +306,15 @@ namespace Dotstrap
                         Frontend.ShowBalloonTip(Strings.Bootstrapper_ModificationsFailed_Title, Strings.Bootstrapper_ModificationsFailed_Message, ToolTipIcon.Warning);
                 }
 
-                // must be owned before the client starts, otherwise it takes the mutex itself
-                if (_launchMode == LaunchMode.Player && App.Settings.Prop.MultiInstanceLaunching)
-                    _robloxSingleton = RobloxSingletonHolder.TryAcquire();
+                if (_launchMode == LaunchMode.Player)
+                {
+                    SystemTweaks.ApplyFramerateCap();
+                    SystemTweaks.ApplyGpuPreference(AppData.ExecutablePath);
+
+                    // must be owned before the client starts, otherwise it takes the mutex itself
+                    if (App.Settings.Prop.MultiInstanceLaunching)
+                        _robloxSingleton = RobloxSingletonHolder.TryAcquire();
+                }
 
                 StartRoblox();
             }
@@ -702,7 +708,8 @@ namespace Dotstrap
                     autoclosePids.Add(pid);
             }
 
-            if (App.Settings.Prop.EnableActivityTracking || App.LaunchSettings.TestModeFlag.Active || autoclosePids.Any())
+            // the watcher also switches the power plan back once roblox closes
+            if (App.Settings.Prop.EnableActivityTracking || App.Settings.Prop.HighPerformancePowerPlan || App.LaunchSettings.TestModeFlag.Active || autoclosePids.Any())
             {
                 using var ipl = new InterProcessLock("Watcher", TimeSpan.FromSeconds(5));
 

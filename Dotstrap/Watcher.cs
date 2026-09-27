@@ -18,6 +18,9 @@ namespace Dotstrap
 
         public readonly PlaytimeTracker? PlaytimeTracker;
 
+        // power plan that was active before we switched to high performance, restored when roblox closes
+        private string? _previousPowerPlan;
+
         public Watcher()
         {
             const string LOG_IDENT = "Watcher";
@@ -113,8 +116,13 @@ namespace Dotstrap
 
             ActivityWatcher?.Start();
 
+            if (App.Settings.Prop.HighPerformancePowerPlan)
+                _previousPowerPlan = SystemTweaks.EnableHighPerformancePowerPlan();
+
             while (Utilities.GetProcessesSafe().Any(x => x.Id == _watcherData.ProcessId))
                 await Task.Delay(1000);
+
+            RestorePowerPlan();
 
             if (_watcherData.AutoclosePids is not null)
             {
@@ -126,9 +134,21 @@ namespace Dotstrap
                 Process.Start(Paths.Process, "-settings -testmode");
         }
 
+        private void RestorePowerPlan()
+        {
+            if (_previousPowerPlan is null)
+                return;
+
+            SystemTweaks.RestorePowerPlan(_previousPowerPlan);
+            _previousPowerPlan = null;
+        }
+
         public void Dispose()
         {
             App.Logger.WriteLine("Watcher::Dispose", "Disposing Watcher");
+
+            // in case the watcher is closed early (e.g. from the tray menu) while roblox is still open
+            RestorePowerPlan();
 
             _notifyIcon?.Dispose();
             RichPresence?.Dispose();

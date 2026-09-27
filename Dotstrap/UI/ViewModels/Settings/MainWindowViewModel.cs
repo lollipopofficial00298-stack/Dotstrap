@@ -10,7 +10,12 @@ namespace Dotstrap.UI.ViewModels.Settings
         public ICommand OpenAboutCommand => new RelayCommand(OpenAbout);
         
         public ICommand SaveSettingsCommand => new RelayCommand(SaveSettings);
-        
+
+        public ICommand SaveAndLaunchCommand => new RelayCommand(SaveAndLaunch);
+
+        // checked by the window once it has closed, instead of just exiting
+        public bool LaunchRobloxOnClose { get; private set; } = false;
+
         public ICommand CloseWindowCommand => new RelayCommand(CloseWindow);
 
         public EventHandler? RequestSaveNoticeEvent;
@@ -37,6 +42,14 @@ namespace Dotstrap.UI.ViewModels.Settings
         private void OpenAbout() => new MainWindow().ShowDialog();
 
         private void CloseWindow() => RequestCloseWindowEvent?.Invoke(this, EventArgs.Empty);
+
+        private void SaveAndLaunch()
+        {
+            SaveSettings();
+
+            LaunchRobloxOnClose = true;
+            CloseWindow();
+        }
 
         private void SaveSettings()
         {

@@ -505,6 +505,366 @@ namespace Dotstrap.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Optimization.
+        /// </summary>
+        public static string Menu_Optimization_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings that lower the load Roblox puts on your computer. Only flags from Roblox&apos;s official allowlist are used. Changes apply the next time Roblox starts..
+        /// </summary>
+        public static string Menu_Optimization_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fast Flag management is turned off on the Fast Flags page, so these settings won&apos;t be applied..
+        /// </summary>
+        public static string Menu_Optimization_ManagerDisabled {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.ManagerDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quick setup.
+        /// </summary>
+        public static string Menu_Optimization_Profiles_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Profiles.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum performance.
+        /// </summary>
+        public static string Menu_Optimization_Profiles_MaxPerformance {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Profiles.MaxPerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sets everything below to the lowest load. Games will look simpler..
+        /// </summary>
+        public static string Menu_Optimization_Profiles_MaxPerformance_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Profiles.MaxPerformance.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apply.
+        /// </summary>
+        public static string Menu_Optimization_Profiles_Apply {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Profiles.Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        public static string Menu_Optimization_Profiles_Reset {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Profiles.Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Graphics.
+        /// </summary>
+        public static string Menu_Optimization_Categories_Graphics {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Categories.Graphics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to World.
+        /// </summary>
+        public static string Menu_Optimization_Categories_World {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Categories.World", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Graphics quality.
+        /// </summary>
+        public static string Menu_Optimization_QualityLevel_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.QualityLevel.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Locks Roblox&apos;s graphics quality level: 1 is the lowest, 21 the highest. Automatic uses the in-game setting..
+        /// </summary>
+        public static string Menu_Optimization_QualityLevel_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.QualityLevel.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop lighting updates.
+        /// </summary>
+        public static string Menu_Optimization_PauseVoxelizer_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.PauseVoxelizer.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stops lighting and shadows from being recalculated when the world changes. Lowers CPU load, but lighting may look wrong..
+        /// </summary>
+        public static string Menu_Optimization_PauseVoxelizer_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.PauseVoxelizer.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simplify distant objects.
+        /// </summary>
+        public static string Menu_Optimization_LowerDetail_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.LowerDetail.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complex objects (unions) always use their simplest level of detail. Lowers GPU load..
+        /// </summary>
+        public static string Menu_Optimization_LowerDetail_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.LowerDetail.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove grass.
+        /// </summary>
+        public static string Menu_Optimization_DisableGrass_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.DisableGrass.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stops grass from being drawn on terrain..
+        /// </summary>
+        public static string Menu_Optimization_DisableGrass_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.DisableGrass.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save and launch.
+        /// </summary>
+        public static string Menu_SaveAndLaunch {
+            get {
+                return ResourceManager.GetString("Menu.SaveAndLaunch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        public static string Menu_Optimization_Categories_System {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Categories.System", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows settings that Dotstrap applies for Roblox. Roblox itself isn&apos;t touched..
+        /// </summary>
+        public static string Menu_Optimization_Categories_System_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Categories.System.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use high performance GPU.
+        /// </summary>
+        public static string Menu_Optimization_Gpu_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Gpu.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tells Windows to run Roblox on the more powerful graphics card, same as the &quot;High performance&quot; option in Windows graphics settings. Mostly helps on laptops with two GPUs..
+        /// </summary>
+        public static string Menu_Optimization_Gpu_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Gpu.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High performance power plan while playing.
+        /// </summary>
+        public static string Menu_Optimization_PowerPlan_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.PowerPlan.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switches Windows to the &quot;High performance&quot; power plan while Roblox is open, and back to your usual plan when it closes. Uses more battery on laptops..
+        /// </summary>
+        public static string Menu_Optimization_PowerPlan_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.PowerPlan.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Experimental.
+        /// </summary>
+        public static string Menu_Optimization_Categories_Experimental {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Categories.Experimental", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not an official Roblox option: it may be ignored or change in a future update. Use at your own risk..
+        /// </summary>
+        public static string Menu_Optimization_Categories_Experimental_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Categories.Experimental.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum frame rate.
+        /// </summary>
+        public static string Menu_Optimization_FramerateCap_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.FramerateCap.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Writes this value into Roblox&apos;s own settings file before each launch, in place of the in-game &quot;Maximum Frame Rate&quot; option (which stops at 240). Roblox may still limit it. Don&apos;t change the frame rate in-game while this is on..
+        /// </summary>
+        public static string Menu_Optimization_FramerateCap_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.FramerateCap.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maintenance.
+        /// </summary>
+        public static string Menu_Optimization_Categories_Maintenance {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Categories.Maintenance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear Roblox cache.
+        /// </summary>
+        public static string Menu_Optimization_ClearCache_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.ClearCache.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deletes Roblox&apos;s logs, temporary files and downloaded game assets to free up disk space. Assets are downloaded again when needed, so the first join into each game may take longer. Settings and your login are kept..
+        /// </summary>
+        public static string Menu_Optimization_ClearCache_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.ClearCache.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        public static string Menu_Optimization_ClearCache_Button {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.ClearCache.Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Roblox&apos;s logs, temporary files and cached game assets?.
+        /// </summary>
+        public static string Menu_Optimization_ClearCache_Confirm {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.ClearCache.Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done! Freed {0} MB..
+        /// </summary>
+        public static string Menu_Optimization_ClearCache_Done {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.ClearCache.Done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close Roblox and Roblox Studio first, then try again..
+        /// </summary>
+        public static string Menu_Optimization_ClearCache_RobloxRunning {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.ClearCache.RobloxRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roblox folders.
+        /// </summary>
+        public static string Menu_Optimization_Folders_Title {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Folders.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quickly open the folder with your Roblox screenshots or Roblox&apos;s own logs..
+        /// </summary>
+        public static string Menu_Optimization_Folders_Description {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Folders.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screenshots.
+        /// </summary>
+        public static string Menu_Optimization_Folders_Screenshots {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Folders.Screenshots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logs.
+        /// </summary>
+        public static string Menu_Optimization_Folders_Logs {
+            get {
+                return ResourceManager.GetString("Menu.Optimization.Folders.Logs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Analytics.
         /// </summary>
         public static string Common_Analytics {

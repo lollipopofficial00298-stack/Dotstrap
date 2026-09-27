@@ -33,6 +33,28 @@ namespace Dotstrap
 
             { "Rendering.FlatSky", "FFlagDebugSkyGray" },
             { "Rendering.ReducedGrassMotion", "FIntGrassMovementReducedMotionFactor" },
+
+            // optimization presets - also all on the allowlist
+            { "Rendering.QualityLevel", "DFIntDebugFRMQualityLevelOverride" },
+            { "Rendering.Grass.MinDistance", "FIntFRMMinGrassDistance" },
+            { "Rendering.Grass.MaxDistance", "FIntFRMMaxGrassDistance" },
+            { "Rendering.PauseVoxelizer", "DFFlagDebugPauseVoxelizer" },
+
+            { "Geometry.LowerDetail.L0", "DFIntCSGLevelOfDetailSwitchingDistance" },
+            { "Geometry.LowerDetail.L12", "DFIntCSGLevelOfDetailSwitchingDistanceL12" },
+            { "Geometry.LowerDetail.L23", "DFIntCSGLevelOfDetailSwitchingDistanceL23" },
+            { "Geometry.LowerDetail.L34", "DFIntCSGLevelOfDetailSwitchingDistanceL34" },
+        };
+
+        public static IReadOnlyDictionary<RenderQualityLevel, string?> RenderQualityLevels => new Dictionary<RenderQualityLevel, string?>
+        {
+            { RenderQualityLevel.Default, null },
+            { RenderQualityLevel.Level1, "1" },
+            { RenderQualityLevel.Level3, "3" },
+            { RenderQualityLevel.Level5, "5" },
+            { RenderQualityLevel.Level10, "10" },
+            { RenderQualityLevel.Level15, "15" },
+            { RenderQualityLevel.Level21, "21" },
         };
 
         public static IReadOnlyDictionary<MSAAMode, string?> MSAAModes => new Dictionary<MSAAMode, string?>

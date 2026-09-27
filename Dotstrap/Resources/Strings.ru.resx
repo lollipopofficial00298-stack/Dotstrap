@@ -1593,4 +1593,130 @@ Dotstrap был установлен в "{1}".</value>
   <data name="Menu.Behaviour.MultiInstance.Description" xml:space="preserve">
     <value>Позволяет открывать несколько копий Roblox одновременно. Roblox официально это не поддерживает — используйте на свой риск. После включения закройте все окна Roblox перед первым запуском. Пока Roblox открыт, Dotstrap работает в фоне.</value>
   </data>
+  <data name="Menu.Optimization.Title" xml:space="preserve">
+    <value>Оптимизация</value>
+  </data>
+  <data name="Menu.Optimization.Description" xml:space="preserve">
+    <value>Настройки, которые снижают нагрузку Roblox на компьютер. Используются только флаги из официального разрешённого списка Roblox. Изменения применяются при следующем запуске Roblox.</value>
+  </data>
+  <data name="Menu.Optimization.ManagerDisabled" xml:space="preserve">
+    <value>Управление Fast Flag&apos;ами выключено на вкладке «Fast Flags» — эти настройки не будут применяться.</value>
+  </data>
+  <data name="Menu.Optimization.Profiles.Title" xml:space="preserve">
+    <value>Быстрая настройка</value>
+  </data>
+  <data name="Menu.Optimization.Profiles.MaxPerformance" xml:space="preserve">
+    <value>Максимальная производительность</value>
+  </data>
+  <data name="Menu.Optimization.Profiles.MaxPerformance.Description" xml:space="preserve">
+    <value>Выставляет настройки графики и мира ниже на минимальную нагрузку. Игры будут выглядеть проще.</value>
+  </data>
+  <data name="Menu.Optimization.Profiles.Apply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="Menu.Optimization.Profiles.Reset" xml:space="preserve">
+    <value>Сбросить</value>
+  </data>
+  <data name="Menu.Optimization.Categories.Graphics" xml:space="preserve">
+    <value>Графика</value>
+  </data>
+  <data name="Menu.Optimization.Categories.World" xml:space="preserve">
+    <value>Мир</value>
+  </data>
+  <data name="Menu.Optimization.QualityLevel.Title" xml:space="preserve">
+    <value>Качество графики</value>
+  </data>
+  <data name="Menu.Optimization.QualityLevel.Description" xml:space="preserve">
+    <value>Фиксирует уровень графики Roblox: 1 — самый низкий, 21 — самый высокий. «Автоматически» — как выбрано в самой игре.</value>
+  </data>
+  <data name="Menu.Optimization.PauseVoxelizer.Title" xml:space="preserve">
+    <value>Отключить обновление освещения</value>
+  </data>
+  <data name="Menu.Optimization.PauseVoxelizer.Description" xml:space="preserve">
+    <value>Освещение и тени перестают пересчитываться при изменении мира. Снижает нагрузку на процессор, но освещение может выглядеть неправильно.</value>
+  </data>
+  <data name="Menu.Optimization.LowerDetail.Title" xml:space="preserve">
+    <value>Упрощать объекты на расстоянии</value>
+  </data>
+  <data name="Menu.Optimization.LowerDetail.Description" xml:space="preserve">
+    <value>Сложные объекты (union&apos;ы) всегда отображаются в самом упрощённом виде. Снижает нагрузку на видеокарту.</value>
+  </data>
+  <data name="Menu.Optimization.DisableGrass.Title" xml:space="preserve">
+    <value>Убрать траву</value>
+  </data>
+  <data name="Menu.Optimization.DisableGrass.Description" xml:space="preserve">
+    <value>Трава на ландшафте перестаёт отрисовываться.</value>
+  </data>
+  <data name="Menu.SaveAndLaunch" xml:space="preserve">
+    <value>Сохранить и запустить</value>
+  </data>
+  <data name="Menu.Optimization.Categories.System" xml:space="preserve">
+    <value>Система</value>
+  </data>
+  <data name="Menu.Optimization.Categories.System.Description" xml:space="preserve">
+    <value>Настройки Windows, которые Dotstrap применяет для Roblox. Сам Roblox при этом не затрагивается.</value>
+  </data>
+  <data name="Menu.Optimization.Gpu.Title" xml:space="preserve">
+    <value>Использовать мощную видеокарту</value>
+  </data>
+  <data name="Menu.Optimization.Gpu.Description" xml:space="preserve">
+    <value>Windows будет запускать Roblox на более мощной видеокарте — то же, что пункт «Высокая производительность» в настройках графики Windows. Помогает в основном на ноутбуках с двумя видеокартами.</value>
+  </data>
+  <data name="Menu.Optimization.PowerPlan.Title" xml:space="preserve">
+    <value>Схема питания «Высокая производительность» во время игры</value>
+  </data>
+  <data name="Menu.Optimization.PowerPlan.Description" xml:space="preserve">
+    <value>Пока открыт Roblox, Windows переключается на схему питания «Высокая производительность», а после выхода возвращается обычная схема. На ноутбуке батарея будет садиться быстрее.</value>
+  </data>
+  <data name="Menu.Optimization.Categories.Experimental" xml:space="preserve">
+    <value>Экспериментально</value>
+  </data>
+  <data name="Menu.Optimization.Categories.Experimental.Description" xml:space="preserve">
+    <value>Это не официальная возможность Roblox: она может не сработать или перестать работать после обновления. Используйте на свой риск.</value>
+  </data>
+  <data name="Menu.Optimization.FramerateCap.Title" xml:space="preserve">
+    <value>Максимальная частота кадров</value>
+  </data>
+  <data name="Menu.Optimization.FramerateCap.Description" xml:space="preserve">
+    <value>Перед каждым запуском записывает это значение в файл настроек Roblox вместо пункта «Максимальная частота кадров» из игры (где максимум 240). Roblox всё равно может его ограничить. Пока настройка включена, не меняйте частоту кадров в самой игре.</value>
+  </data>
+  <data name="Menu.Optimization.Categories.Maintenance" xml:space="preserve">
+    <value>Обслуживание</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.Title" xml:space="preserve">
+    <value>Очистить кэш Roblox</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.Description" xml:space="preserve">
+    <value>Удаляет логи, временные файлы и скачанные ресурсы игр Roblox, чтобы освободить место на диске. Ресурсы скачаются заново, когда понадобятся, поэтому первый вход в каждую игру может быть дольше. Настройки и вход в аккаунт сохраняются.</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.Button" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.Confirm" xml:space="preserve">
+    <value>Удалить логи, временные файлы и кэш ресурсов игр Roblox?</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.Done" xml:space="preserve">
+    <value>Готово! Освобождено {0} МБ.</value>
+  </data>
+  <data name="Menu.Optimization.ClearCache.RobloxRunning" xml:space="preserve">
+    <value>Сначала закройте Roblox и Roblox Studio, затем попробуйте снова.</value>
+  </data>
+  <data name="Menu.Optimization.Folders.Title" xml:space="preserve">
+    <value>Папки Roblox</value>
+  </data>
+  <data name="Menu.Optimization.Folders.Description" xml:space="preserve">
+    <value>Быстро открыть папку со скриншотами Roblox или с логами Roblox.</value>
+  </data>
+  <data name="Menu.Optimization.Folders.Screenshots" xml:space="preserve">
+    <value>Скриншоты</value>
+  </data>
+  <data name="Menu.Optimization.Folders.Logs" xml:space="preserve">
+    <value>Логи</value>
+  </data>
+  <data name="Enums.FramerateCap.Default" xml:space="preserve">
+    <value>Не менять (как в игре)</value>
+  </data>
+  <data name="Enums.FramerateCap.Unlimited" xml:space="preserve">
+    <value>Без ограничения</value>
+  </data>
 </root>
