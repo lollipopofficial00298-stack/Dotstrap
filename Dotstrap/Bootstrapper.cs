@@ -820,8 +820,9 @@ namespace Dotstrap
 
             var versionComparison = Utilities.CompareVersions(App.Version, releaseInfo.TagName);
 
-            // check if we aren't using a deployed build, so we can update to one if a new version comes out
-            if (App.IsProductionBuild && versionComparison == VersionComparison.Equal || versionComparison == VersionComparison.GreaterThan)
+            // only update to a strictly newer release. upstream also "updated" non-CI builds to a release of the same version,
+            // but Dotstrap releases are built locally (never a production build), so that re-downloaded the same exe on every launch
+            if (versionComparison != VersionComparison.LessThan)
             {
                 App.Logger.WriteLine(LOG_IDENT, "No updates found");
                 return false;
