@@ -223,7 +223,8 @@ namespace Dotstrap
                 App.Terminate(ErrorCode.ERROR_FILE_NOT_FOUND);
             }
 
-            if (App.Settings.Prop.ConfirmLaunches && launchMode != LaunchMode.Studio && Mutex.TryOpenExisting("ROBLOX_singletonMutex", out var _))
+            // with multi-instance launching, the new client opens its own window instead of closing the running one
+            if (App.Settings.Prop.ConfirmLaunches && !App.Settings.Prop.MultiInstanceLaunching && launchMode != LaunchMode.Studio && Mutex.TryOpenExisting("ROBLOX_singletonMutex", out var _))
             {
                 // this currently doesn't work very well since it relies on checking the existence of the singleton mutex
                 // which often hangs around for a few seconds after the window closes

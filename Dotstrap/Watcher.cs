@@ -21,6 +21,8 @@ namespace Dotstrap
         // power plan that was active before we switched to high performance, restored when roblox closes
         private string? _previousPowerPlan;
 
+        private bool _integrationsDisposed = false;
+
         public Watcher()
         {
             const string LOG_IDENT = "Watcher";
@@ -122,8 +124,6 @@ namespace Dotstrap
             while (Utilities.GetProcessesSafe().Any(x => x.Id == _watcherData.ProcessId))
                 await Task.Delay(1000);
 
-            RestorePowerPlan();
-
             if (_watcherData.AutoclosePids is not null)
             {
                 foreach (int pid in _watcherData.AutoclosePids)
@@ -132,6 +132,20 @@ namespace Dotstrap
 
             if (App.LaunchSettings.TestModeFlag.Active)
                 Process.Start(Paths.Process, "-settings -testmode");
+
+            // only one watcher runs at a time, so with multi-instance launching other clients can still be open -
+            // keep the power plan until they've all closed, with nothing left showing for the client we were watching
+            if (_previousPowerPlan is not null && RobloxSingletonHolder.IsRobloxPlayerRunning())
+            {
+                App.Logger.WriteLine("Watcher::Run", "Other Roblox clients are still open, waiting for them to close before restoring the power plan");
+
+                DisposeIntegrations();
+
+                while (RobloxSingletonHolder.IsRobloxPlayerRunning())
+                    await Task.Delay(3000);
+            }
+
+            RestorePowerPlan();
         }
 
         private void RestorePowerPlan()
@@ -143,6 +157,18 @@ namespace Dotstrap
             _previousPowerPlan = null;
         }
 
+        private void DisposeIntegrations()
+        {
+            if (_integrationsDisposed)
+                return;
+
+            _integrationsDisposed = true;
+
+            _notifyIcon?.Dispose();
+            RichPresence?.Dispose();
+            PlaytimeTracker?.Dispose();
+        }
+
         public void Dispose()
         {
             App.Logger.WriteLine("Watcher::Dispose", "Disposing Watcher");
@@ -150,9 +176,7 @@ namespace Dotstrap
             // in case the watcher is closed early (e.g. from the tray menu) while roblox is still open
             RestorePowerPlan();
 
-            _notifyIcon?.Dispose();
-            RichPresence?.Dispose();
-            PlaytimeTracker?.Dispose();
+            DisposeIntegrations();
 
             GC.SuppressFinalize(this);
         }

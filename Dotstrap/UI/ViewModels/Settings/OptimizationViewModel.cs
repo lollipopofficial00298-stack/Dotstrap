@@ -167,7 +167,7 @@ namespace Dotstrap.UI.ViewModels.Settings
 
             long freed = SystemTweaks.ClearRobloxCache();
 
-            Frontend.ShowMessageBox(String.Format(Strings.Menu_Optimization_ClearCache_Done, $"{freed / 1024d / 1024d:N0}"), MessageBoxImage.Information);
+            Frontend.ShowMessageBox(String.Format(Strings.Menu_Optimization_ClearCache_Done, $"{freed / 1024d / 1024d:N1}"), MessageBoxImage.Information);
         }
     }
 }
